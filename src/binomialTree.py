@@ -1,8 +1,9 @@
 import math as ma
 import numpy as np
-import numba as nb
+from numba import jit
 
 
+@jit(nopython=True)
 def binomialTree (r, sigma, S0, T, K, M, call = True, European = True):
     """Price a vanilla option using the Cox, Ross and Rubinstein binomial tree method, based
     on the algorithm presented in the Computational Finance script at the University of Kiel.
